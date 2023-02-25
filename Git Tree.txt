@@ -1,0 +1,7 @@
+* 	 (HEAD -> main, origin/main, origin/HEAD) models re-run and the results saved. conclusion added to readme
+* 	 notebook code updated and images updated accordingly. models re-saved
+* 	 images added, models saved, notebook updated
+* 	 notebook model 1 created and saved
+* 	 data optimized
+* 	 readme initiated, images added, initial notebook added
+* 	 Initial commit
