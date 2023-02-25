@@ -1,6 +1,6 @@
 # Machine Learning Models and Venture Capital.
 
-### An increasing number of sectors in the economy are getting disrupted by incorporating machine learning models in the business decision priocess. One of those sectors is Venture Capital.<br/>This application demonstrates the machine learning selection process, Venture Capital firm can use to take advantage of the new technology to improve its odds of selecting successful businesses.
+### An increasing number of sectors in the economy are getting disrupted by incorporating machine learning models in the business decision priocess. One of those sectors is Venture Capital.<br/>This application demonstrates the machine learning selection process, a venture capital firm can use to take advantage of the new technology to improve its odds of selecting successful businesses.
 
 ---
 
@@ -71,7 +71,7 @@ pip install -U scikit-learn
 
 > Application summary<br/>
 
-Machine Learning Models and Venture Capital application assiss in creating and evaluating a neural network model that predicts whether applicants will be successful if funded by a venture capital firm. The tool takes a user through three steps in identifying, evaluating and optimizing the mneural network models:<br/>
+Machine Learning Models and Venture Capital application assist in creating and evaluating a neural network model that predicts whether applicants will be successful if funded by a venture capital firm. The tool takes a user through three steps involving identifying, evaluating and optimizing the neural network models:<br/>
 
 - Processing of the data for a neural network model.
 - Using the model-fit-predict pattern to compile and evaluate a binary classification model.
@@ -89,15 +89,15 @@ Machine Learning Models and Venture Capital application assiss in creating and e
 - We start by creating a deep neural network with a two-layer deep neural network model that uses the relu activation function for both layers and the output activation function sigmoid appropriate for the classifier models. Below is the summary of the model we created:<br/>
   ![m1_summary](Images/m1_summary.PNG)<br/>
 - We compile and fit the model using the binary_crossentropy loss function, the adam optimizer, and the accuracy evaluation metric. 50 epochs are used at this stage.<br/>
-- Next, evaluate the model by using the scaled test data and the test target values <br/>
+- Next, we evaluate the model by using the scaled test data and the test target values <br/>
   ![m1_reval](Images/M1_eval.PNG)<br/>
-- We finalize this stage by saving and exposrting the model we created to our Resources folder <br/>
+- We finalize this part by saving and exposrting the model we created to our Resources folder. <br/>
 
 **Optimizing the neural network model:**<br/>
 
 _Model 1_<br/>
 
-- We first optimize the model by adjusting the dataset: two features are identified as imbalanced and removed: STATUS and SPECIAL_CONSIDERATIONS. Below are the details of imbalances for those two features:
+- We first optimize the model by adjusting the dataset: two features are identified as imbalanced and removed: STATUS and SPECIAL_CONSIDERATIONS. Below are the details of the imbalances for those two features:
 
   - STATUS:<br/>
     ![status](Images/status.PNG)<br/>
@@ -118,8 +118,8 @@ _Model 1a_
 
 _Model 2_
 
-- This optimization involves reverting to the original data set and changing to the original model parameters as follows:<br/>
-  - Add one hidden layer;
+- This optimization involves reverting to the original data set and modifying the original model parameters as follows:<br/>
+  - Added one hidden layer;
   - Hidden layers activation function changed to Leaky ReLU;
   - Epochs increased from 50 to 100.<br/>
 - Below is the summary of this model:<br/>
@@ -129,11 +129,11 @@ _Model 2_
   ![m3_reval](Images/M3_100_eval.PNG)<br/>
 
 **Summary**:<br/>
-The loss and accuracy parametes are compared below:<br/>
+The loss and accuracy parametes of all our models are compared below:<br/>
 ![summary](Images/Summary.PNG)<br/>
 By removing two imbalanced features we managed to increase the model's loss but the accuracy parameter slightly deteriorted.<br/> Interestingly, increasing the number of epochs did not imporve the optimized model's performance.<br/>
 When reverting back to the original dataset and changing the model's parameters we improved the loss metrics but the accuracy decreased comparing to the original model. However, in terms of the loss model M2 is is still underperforming model M1 but overperforming M1 on accuracy.<br/>
-Overall, we did not manage to significantly improve the original model's performance. In this case the subject matter expert's opinion will be decisive in the ultimate model selection.<br/>
+Overall, we did not succeed to significantly improve the original model's performance. In this case the subject matter expert's opinion will be decisive in the ultimate model selection.<br/>
 
 > Getting started<br/>
 
