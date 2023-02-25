@@ -1,6 +1,6 @@
 # Machine Learning Models and Venture Capital.
 
-### An increasing number of sectors in the economy are getting disrupted by incorporating machine learning models in the business decision priocess. One of those sectors is Venture Capital.<br/>This application demonstrates how a Venture Capital firm can take advantage of the new technology to improve its odds of secting successful businesses.
+### An increasing number of sectors in the economy are getting disrupted by incorporating machine learning models in the business decision priocess. One of those sectors is Venture Capital.<br/>This application demonstrates the machine learning selection process, Venture Capital firm can use to take advantage of the new technology to improve its odds of selecting successful businesses.
 
 ---
 
@@ -30,14 +30,9 @@ _Prerequisites_
 
    - [pandas](https://github.com/pandas-dev/pandas) - for the documentation, installation guide and dependencies.
 
-2. `PyViz` is a Python visualization package that provides a single platform for accessing multiple visualization libraries. One of these libraries is hvPlot. <br/>
+2. `Scikit-learn` is a simple and efficient tools for predictive data analysis. It is built on NumPy, SciPy, and matplotlib.
 
-   - [PyViz ](https://pyviz.org/) - for guidance on how to start visualization, interactive visualization, styles and layouts customazation.
-   - [hvPlot ](https://hvplot.holoviz.org/) is a visualization library that is designed to work with Pandas DataFrames and that we can use to create interactive plots for our data.<br/>
-
-3. `Prophet` is a forecasting model implemented and Python. It provides completely automated forecasts and trends analysis.
-
-   - [Facebook Prophet library ](https://facebook.github.io/prophet/) - for information on the library and its features.<br/>
+   - [scikit-learn ](https://scikit-learn.org/stable/) - for information on the library, its features and installation instructions.<br/>
 
 ---
 
@@ -63,30 +58,11 @@ pip install pandas
 conda install pandas
 ```
 
-To install PyViz, in Terminal run:
+To install scikit library, in Terminal run:
 
 ```python
-# conda
-conda install -c pyviz hvplot
-```
-
-Confirm the installation of all the PyViz packages by running the following commands in Terminal type:
-
-```python
- conda list hvplot
-```
-
-To work with Prophet library, use **[Google Colab](https://colab.research.google.com/)** (jupyter notebook in the cloud):
-
-```
-Start Google Colab at https://colab.research.google.com/
-	• Choose Upload option
-	• Choose File (notebook .ipynb)
-Install packages in memory by !pip install pystan and !pip install prophet (this will be stored temporarily in the cloud
-	• Then from lib import as usual
-		○ Then from google.colab import files
-		○ Upload = files.upload() to get csv files a window to upload will appear
-	• Then we will just use the usual code to read from file to df
+# PuPi
+pip install -U scikit-learn
 ```
 
 ---
@@ -95,41 +71,69 @@ Install packages in memory by !pip install pystan and !pip install prophet (this
 
 > Application summary<br/>
 
-Stock Price Forecast takes us through Google Search traffic analysis, Mercado Libre closing prices and the firm's revenues to establish trends and correlations as well as forecast the search traffic and revenues by utilizing Facebook's Prophet model<br/>
+Machine Learning Models and Venture Capital application assiss in creating and evaluating a neural network model that predicts whether applicants will be successful if funded by a venture capital firm. The tool takes a user through three steps in identifying, evaluating and optimizing the mneural network models:<br/>
 
-**Google Search and Mercado closing prices analyses:**<br/>
+- Processing of the data for a neural network model.
+- Using the model-fit-predict pattern to compile and evaluate a binary classification model.
+- Optimizing the model.
 
-- Search trends in May 2020 are analysed and compared to the median monthly traffic to estimate a possible effect of revenues announcement: <br/>
-  ![weekday_search](Images/av_search_weekday.png)<br/>
+**Processing of the data for a neural network model:**<br/>
 
-- Furhter breakdown is made to understand the most popular search hours during the week: <br/>
-  ![popular_hours](Images/weekday_hour.png)<br/>
-- Next, the weekly search trends during the year are analyzed to understand which weeks tend to be the most active in terms of Google search traffic <br/> ![popular_weeks](Images/week_of_year.png)<br/>
-- The tool procedes to the stock's clsing prices analysis, starting with the trend in stock prices:<br/>
-  ![mercado_closing](Images/Mercado_prices.png)<br/>
-- And the closing prices are plotted next to the Search traffic to identify any common patterns::<br/>
-  ![price](Images/price_trend.png)<br/>
-  ![prictrende](Images/price_trend2.png)<br/>
-- Mercado stock's volatility is analyzed as well:<br/>
-  ![volatility](Images/stock_vol.png)<br/>
-- Any possible predictable relationship between search trends and the stocks volatility and between the trends and the closing stock prices is tested via correlations between those measures::<br/>
-  ![correlation](Images/vol_stock_trend_corr.png)<br/>
+- In this part of the applcation we load the dataset and chek it for the categorical values: <br/>
+  ![categotrical](Images/CategoricalPNG.PNG)<br/>
+- Once identified, those values are transformed into numerical values with OneHotEncoder and concatenated with other numerical data from the original dataset.
+- The data is split into the features and the target and into the training and testing sets. The features are then scaled with the StandardScaler.
 
-  **_Facebook Prophet analyses_**<br/>
+**Compiling and Evaluating the Binary Classification Model Using a Neural Network:**<br/>
 
-- We use Prophet model to forecast the Search traffic:<br/>
-  ![search_forecast](Images/fb_forecast.PNG)<br/>
-- We also forecast the Search trafic 80 days into the future:<br/>
-  ![search_forecasta](Images/forecast_prediction.png)<br/>
-- We finalize the Search traffic analysis by looking at the trends produced by Prophet:<br/>
-  ![search_trends](Images/fb_trend.PNG)<br/>
-  ![fb_serach_trends](Images/fb_analysis.PNG)<br/>
-- We procede with looking into the revenues figures:<br/>
-  ![revenues](Images/revenues.png)<br/>
-- And use Prhophet to study the revenues trends:<br/>
-  ![rev_trends](Images/revenues_trends.PNG)<br/>
-- We finalize our research by forecasting 90 days revenues and showing three scenarios for the revenue forecasted figures :<br/>
-  ![rev_trends](Images/fb_rev_forecast.PNG)<br/>
+- We start by creating a deep neural network with a two-layer deep neural network model that uses the relu activation function for both layers and the output activation function sigmoid appropriate for the classifier models. Below is the summary of the model we created:<br/>
+  ![m1_summary](Images/m1_summary.PNG)<br/>
+- We compile and fit the model using the binary_crossentropy loss function, the adam optimizer, and the accuracy evaluation metric. 50 epochs are used at this stage.<br/>
+- Next, evaluate the model by using the scaled test data and the test target values <br/>
+  ![m1_reval](Images/M1_eval.PNG)<br/>
+- We finalize this stage by saving and exposrting the model we created to our Resources folder <br/>
+
+**Optimizing the neural network model:**<br/>
+
+_Module 1_<br/>
+
+- We first optimize the model by adjusting the dataset: two features are identified as imbalanced and removed: STATUS and SPECIAL_CONSIDERATIONS. Below are the details of imbalances for those two features:
+
+  - STATUS:<br/>
+    ![status](Images/status.PNG)<br/>
+  - SPECIAL_CONSIDERATIONS:<br/>
+    ![status](Images/Considerations.PNG)<br/>
+
+- We compile the model using the rest of the features and characteristics of the original model:
+
+  ![m2_summary](Images/m2_summary.PNG)<br/>
+
+- The evaluation produces the following results:<br/>
+  ![m2_reval](Images/M2_eval.PNG)<br/>
+
+_Module 1a_
+
+- We optimize this model further by increasing the number of epochs to 100 from 50 with the evaluation results demostrated below:<br/>
+  ![m2a_reval](Images/M2a_eval.PNG)<br/>
+
+_Module 2_
+
+- This optimization involves reverting to the original data set and changing to the original model parameters as follows:<br/>
+  - Add one hidden layer;
+  - Hidden layers activation function changed to Leaky ReLU;
+  - Epochs increased from 50 to 100.<br/>
+- Below is the summary of this model:<br/>
+  ![m3_summary](Images/m3_summary.PNG)<br/>
+
+- The evaluation of this model produces the following results:<br/>
+  ![m3_reval](Images/M3_100_eval.PNG)<br/>
+
+**Summary**:<br/>
+The loss and accuracy parametes are compared below:<br/>
+![summary](Images/summary.PNG)<br/>
+By removing two imbalanced features we managed to increase the model's loss but the accuracy parameter slightly deteriorted.<br/> Interestingly, increasing the number of epochs did not imporve the optimized model's performance.<br/>
+When reverting back to the original dataset and changing the model's parameters we improved the loss metrics but the accuracy decreased comparing to the original model. However, in terms of the loss model M2 is is still underperforming model M1 but overperforming M1 on accuracy.<br/>
+Overall, we did not manage to significantly improve the original model's performance. In this case the subject matter expert's opinion will be decisive in the ultimate model selection.<br/>
 
 > Getting started<br/>
 
