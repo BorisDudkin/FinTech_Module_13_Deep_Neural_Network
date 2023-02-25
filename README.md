@@ -130,7 +130,7 @@ _Model 2_
 
 **Summary**:<br/>
 The loss and accuracy parametes are compared below:<br/>
-![summary](Images/summary.PNG)<br/>
+![summary](Images/Summary.PNG)<br/>
 By removing two imbalanced features we managed to increase the model's loss but the accuracy parameter slightly deteriorted.<br/> Interestingly, increasing the number of epochs did not imporve the optimized model's performance.<br/>
 When reverting back to the original dataset and changing the model's parameters we improved the loss metrics but the accuracy decreased comparing to the original model. However, in terms of the loss model M2 is is still underperforming model M1 but overperforming M1 on accuracy.<br/>
 Overall, we did not manage to significantly improve the original model's performance. In this case the subject matter expert's opinion will be decisive in the ultimate model selection.<br/>
