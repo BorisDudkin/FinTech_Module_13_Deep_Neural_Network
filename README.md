@@ -95,7 +95,7 @@ Machine Learning Models and Venture Capital application assiss in creating and e
 
 **Optimizing the neural network model:**<br/>
 
-_Module 1_<br/>
+_Model 1_<br/>
 
 - We first optimize the model by adjusting the dataset: two features are identified as imbalanced and removed: STATUS and SPECIAL_CONSIDERATIONS. Below are the details of imbalances for those two features:
 
@@ -111,12 +111,12 @@ _Module 1_<br/>
 - The evaluation produces the following results:<br/>
   ![m2_reval](Images/M2_eval.PNG)<br/>
 
-_Module 1a_
+_Model 1a_
 
 - We optimize this model further by increasing the number of epochs to 100 from 50 with the evaluation results demostrated below:<br/>
   ![m2a_reval](Images/M2a_eval.PNG)<br/>
 
-_Module 2_
+_Model 2_
 
 - This optimization involves reverting to the original data set and changing to the original model parameters as follows:<br/>
   - Add one hidden layer;
